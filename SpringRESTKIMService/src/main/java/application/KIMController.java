@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class KIMController {
 
-    private static final String testString = "This is the KIM REST Service";
+    private static final String testString = "This is the KIM REST Service!";
 
     @RequestMapping("/KIM")
     public KIM kim() {
