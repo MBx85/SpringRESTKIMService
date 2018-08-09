@@ -1,13 +1,13 @@
 package application;
 
 public class KIM {
-	private String content;
+	private String kim;
 	
-	public KIM (String content) {
-		this.content = content;
+	public KIM (String kim) {
+		this.kim = kim;
 	}
 	
-	public String getContent() {
-		return this.content;
+	public String getKIM() {
+		return this.kim;
 	}
 }
