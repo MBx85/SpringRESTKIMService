@@ -12,13 +12,10 @@ public class KIM {
 	}
 
 	public KIM(String kim) {
-		// this.kim = kim;
-		//KIM TempKimObject = new KIM();
 		KIM TempKimObject = KIMDataFileReader.GetKimFromFile(kim);
 		this.kim = TempKimObject.getKIM();
 		this.vorname = TempKimObject.getVorname();
 		this.nachname = TempKimObject.getNachname();
-		/* this needs to be modified to pickup data from CSV */
 	}
 
 	public void setKim(String value) {
