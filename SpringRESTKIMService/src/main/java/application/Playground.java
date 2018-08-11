@@ -2,7 +2,6 @@ package application;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.util.HashMap;
 
 public class Playground {
 
@@ -20,7 +19,7 @@ public class Playground {
 			int linecounter = 0;
 
 			while (((line = bufferedReader.readLine()) != null)) {
-				if (linecounter != 0) //because header line should not be read
+				if (linecounter != 0) // because header line should not be read
 				{
 					String[] values = line.split(csvDivider);
 
@@ -34,10 +33,10 @@ public class Playground {
 
 			// Always close files.
 			bufferedReader.close();
+
 		} catch (Exception e) {
 			System.out.println("EXCEPTION CAUGHT" + e.getMessage());
 		}
 	}
-
 
 }
