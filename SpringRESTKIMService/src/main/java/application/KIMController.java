@@ -12,4 +12,8 @@ public class KIMController {
 	public KIM kim(@PathVariable("kim") String kim) {
 		return new KIM(kim);
 	}
+	
+	@RequestMapping(value = "/KIM/{kim}", method = RequestMethod.PUT)
+		public void doNothing() {
+	}
 }
