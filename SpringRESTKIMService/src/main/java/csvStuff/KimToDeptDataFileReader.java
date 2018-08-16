@@ -1,12 +1,12 @@
 package csvStuff;
 
-import application.department.Department;
+import application.kim2dept.KimToDept;
 
-public class DeptDataFileReader extends GeneralDataFileReader {
-	private static final String FilePathProperty = "dept.datasource";
+public class KimToDeptDataFileReader extends GeneralDataFileReader {
+	private static final String FilePathProperty = "k2d.datasource";
 
-	public static Department GetDeptFromFile(String deptid) {
-		Department dept = new Department();
+	public static KimToDept GetDeptFromFile(String kim) {
+		KimToDept k2d = new KimToDept();
 		try {
 			filepath = SetFilePathFromProperty(FilePathProperty);
 			FileReaderSupporter frs = new FileReaderSupporter(filepath);
@@ -15,8 +15,8 @@ public class DeptDataFileReader extends GeneralDataFileReader {
 				if (!frs.IsHeaderLine) // because header line should not be read
 				{
 					String[] values = frs.line.split(csvDivider);
-					if (values[0].equals(deptid)) {
-							doMappingFromArray(dept, values);
+					if (values[0].equals(kim)) {
+						doMappingFromArray(k2d, values);
 					}
 				} else
 					frs.IsHeaderLine = false; // set during first iteration
@@ -25,11 +25,11 @@ public class DeptDataFileReader extends GeneralDataFileReader {
 			frs.bufferedReader.close();
 		} catch (Exception e) {
 		}
-		return dept;
+		return k2d;
 	}
-	
-	private static void doMappingFromArray(Department dept, String[] arr){
-		dept.setDeptID(arr[0]);
-		dept.setSkz(arr[1]);
-	} 
+
+	private static void doMappingFromArray(KimToDept k2d, String[] arr) {
+		k2d.setKim(arr[0]);
+		k2d.setDeptid(arr[1]);
+	}
 }

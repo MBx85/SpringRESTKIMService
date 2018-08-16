@@ -1,21 +1,28 @@
 package application;
 
-import java.lang.reflect.Field;
+import java.io.BufferedInputStream;
+import java.io.FileInputStream;
 
-import application.kim.KIM;
+import java.util.Properties;
 
 public class Playground2 {
 
 	public static void main(String[] args) {
+		System.out.println("START");
+		Properties properties = new Properties();
+		try {
+			BufferedInputStream stream = new BufferedInputStream(
+					new FileInputStream("src\\main\\resources\\filesEndpoints.properties"));
 
-KIM kim = new KIM("111");
-Field fieldarr[] = kim.getClass().getFields();
-System.out.println(fieldarr.length);
+			properties.load(stream);
+			stream.close();
+			System.out.println(properties.getProperty("k2d.datasource"));
+		}
 
-for(Field field : kim.getClass().getFields()) {
-	System.out.println(field.getName());
-}
+		catch (Exception e) {
+			System.out.println("EX CAUGHT");
+			System.out.println(e.getMessage());
+		}
 	}
 
 }
-
