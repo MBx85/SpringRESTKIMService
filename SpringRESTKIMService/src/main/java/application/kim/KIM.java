@@ -1,8 +1,10 @@
-package application;
+package application.kim;
 
 import java.util.Date;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import csvStuff.KIMDataFileReader;
 
 
 @JsonIgnoreProperties(ignoreUnknown = true)

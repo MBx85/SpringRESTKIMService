@@ -1,4 +1,4 @@
-package application;
+package csvStuff;
 
 import java.util.HashMap;
 

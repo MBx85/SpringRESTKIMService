@@ -2,6 +2,8 @@ package application;
 
 import java.lang.reflect.Field;
 
+import application.kim.KIM;
+
 public class Playground2 {
 
 	public static void main(String[] args) {
