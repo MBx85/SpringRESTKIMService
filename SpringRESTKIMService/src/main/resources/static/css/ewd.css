@@ -33,7 +33,7 @@ body{
     border-width: 0px 1px 0px 0px;
     background-color: rgb(236, 238, 240);
     height: 100%; /* 100% Full-height */
-    position: fixed; /* Stay in place */
+    /*position: fixed; /* Stay in place */
     float: left;
    }   
 
@@ -63,8 +63,4 @@ a:hover{
     text-decoration: none;
     display: block;
     
-}
-
-.navBarLeft a:hover{
-    font-size: 22px;
 }

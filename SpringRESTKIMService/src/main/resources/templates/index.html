@@ -10,14 +10,16 @@
 <body>
 	<div class="generalFrame">
 		<a href="index" class="homelink">EWD</a></div>
-		<div class="navBarLeft">
-			<a>Mitarbeiter anzeigen</a>
-			<a href="RefreshKIMs">KIMs aktualisieren</a>
-		</div>
-		<div class="mainContent">
-			<h2>2</h2>
-		</div>
-	
+	<div class="navBarLeft">
+		<a href="mitarbeiter">Mitarbeiter anzeigen</a>
+		<a href="RefreshKIMs">KIMs aktualisieren</a>
+	</div>
+	<div class="mainContent">
+		<div th:replace="${fragment} :: ${fragmentElement}"></div>
+		<!--			<div th:replace="/fragments/testfragment :: testfragment">2016 The Static Templates</div>
+			<div th:replace="/fragments/testfragment :: testfragment">2016 The Static Templates</div>-->
+	</div>
+
 </body>
 
 </html>

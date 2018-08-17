@@ -4,10 +4,21 @@
 <head>
 	<title>EWD</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" type="text/css" href="css/ewd.css">
 </head>
 
 <body>
-	<div th:replace="fragments/testfragment :: testfragment">...</div>
+	<div class="generalFrame">
+		<a href="index" class="homelink">EWD</a></div>
+	<div class="navBarLeft">
+		<a>Mitarbeiter anzeigen</a>
+		<a href="RefreshKIMs">KIMs aktualisieren</a>
+	</div>
+	<div class="mainContent">
+		<!--<div th:replace="/fragments/testfragment :: testfragment">2016 The Static Templates</div>-->
+		<div th:replace="${fragment} :: ${fragmentElement}">2016 The Static Templates</div>
+	</div>
+
 </body>
 
 </html>
