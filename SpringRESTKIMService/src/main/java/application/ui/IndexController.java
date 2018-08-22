@@ -9,23 +9,23 @@ public class IndexController {
 
 	@GetMapping("/index")
 	public String index(Model model) {
-		model.addAttribute("fragment", "/fragments/main");
-		model.addAttribute("fragmentElement", "main");
+		/*model.addAttribute("fragment", "/fragments/main");
+		model.addAttribute("fragmentElement", "main");*/
 		return "index";
 	}
 
 	@GetMapping("/mitarbeiter")
 	public String mitarbeiter(Model model) {
-		model.addAttribute("fragment", "fragments/mitarbeiterAnzeigen");
-		model.addAttribute("fragmentElement", "mitarbeiterAnzeigen");
-		return "index";
+		/*model.addAttribute("fragment", "fragments/mitarbeiterAnzeigen");
+		model.addAttribute("fragmentElement", "mitarbeiterAnzeigen");*/
+		return "mitarbeiterAnzeigen";
 	}
 	
 	@GetMapping("/RefreshKIMs")
 	public String refreshKIMs(Model model) {
-		model.addAttribute("fragment", "fragments/kimAktualisieren");
-		model.addAttribute("fragmentElement", "kimAktualisieren");
-		return "index";
+		/*model.addAttribute("fragment", "fragments/kimAktualisieren");
+		model.addAttribute("fragmentElement", "kimAktualisieren");*/
+		return "kimAktualisieren";
 		
 	}
 }

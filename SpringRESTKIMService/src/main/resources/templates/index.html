@@ -5,18 +5,20 @@
 	<title>EWD</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css" href="css/ewd.css">
+	<script src="js/ewd.js"></script>
 </head>
 
 <body>
 	<div class="generalFrame">
-		<a href="index" class="homelink">EWD</a></div>
+		<a href="#" onlick="ReplaceMain('index')" class="homelink">EWD</a></div>
 	<div class="navBarLeft">
-		<a href="mitarbeiter">Mitarbeiter anzeigen</a>
-		<a href="RefreshKIMs">KIMs aktualisieren</a>
+		<a href="#" onclick="ReplaceMain('mitarbeiter')">Mitarbeiter anzeigen</a>
+		<a href="#" onclick="ReplaceMain('RefreshKIMs')">KIMs aktualisieren</a>
+		<!--<button onclick="ReplaceMain()">c</button>-->
 	</div>
-	<div class="mainContent">
-		<div th:replace="${fragment} :: ${fragmentElement}"></div>
-		<!--			<div th:replace="/fragments/testfragment :: testfragment">2016 The Static Templates</div>
+	<div id="mainContent" class="mainContent">Willkommen bei EWD
+		<!--<div th:replace="${fragment} :: ${fragmentElement}"></div>
+					<div th:replace="/fragments/testfragment :: testfragment">2016 The Static Templates</div>
 			<div th:replace="/fragments/testfragment :: testfragment">2016 The Static Templates</div>-->
 	</div>
 
