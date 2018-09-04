@@ -10,7 +10,7 @@ import csvStuff.DeptDataFileReader;
 public class DepartmentController {
 	
 	@GetMapping("/Dept/{deptid}")
-	public Department kimtodept(@PathVariable("deptid") String deptid) {
+	public Department dept(@PathVariable("deptid") String deptid) {
 		return DeptDataFileReader.GetDeptFromFile(deptid);
 	}
 }
