@@ -10,11 +10,10 @@
 
 <body>
 	<div class="generalFrame">
-		<a href="#" onlick="ReplaceMain('index')" class="homelink">EWD</a></div>
+		<a href="#" onclick="ReplaceElementById('index','mainContent')" class="homelink">EWD</a></div>
 	<div class="navBarLeft">
-		<a href="#" onclick="ReplaceMain('mitarbeiter')">Mitarbeiter anzeigen</a>
-		<a href="#" onclick="ReplaceMain('RefreshKIMs')">KIMs aktualisieren</a>
-		<!--<button onclick="ReplaceMain()">c</button>-->
+		<a href="#" onclick="ReplaceElementById('mitarbeiter','mainContent')">Mitarbeiter anzeigen</a>
+		<a href="#" onclick="ReplaceElementById('RefreshKIMs','mainContent')">KIMs aktualisieren</a>
 	</div>
 	<div id="mainContent" class="mainContent">Willkommen bei EWD
 		<!--<div th:replace="${fragment} :: ${fragmentElement}"></div>

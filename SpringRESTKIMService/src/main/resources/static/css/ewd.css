@@ -1,3 +1,7 @@
+html{
+    height:100%;
+}
+
 div{
     padding:8px;
 }
@@ -5,6 +9,45 @@ div{
 .mainContent{
     float:left;
 }
+
+input, button {
+    border-radius: 4px;
+    background: rgb(236, 238, 240);
+    padding: 6px 10px 6px 10px;
+    /*width: 300px;
+    height: 20px; */
+    border-width: 1px;
+    border-color:  rgb(5,53,97);
+    font-size: 24px;
+    color:rgb(5,53,97);
+    margin-left: 2px;
+    margin-right:2px;
+}
+
+button {
+    background-color: rgb(5,53,97);
+    color: rgb(236, 238, 240);
+    cursor: pointer;
+}
+
+input:focus{
+    outline: 0px;
+}
+
+label{
+    font-size:24px;
+    padding: 4px;
+}
+
+.navBarLeft{
+    border-color: rgb(17, 90, 158);
+    border: solid;
+    border-width: 0px 1px 0px 0px;
+    background-color: rgb(236, 238, 240);
+    height: 100%; /* 100% Full-height */
+    /*position: fixed; /* Stay in place */
+    float: left;
+   } 
 
 .generalFrame{
     width:100%;
@@ -25,23 +68,17 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     color: rgb(5, 53, 97);
     margin: 0px;
+    height: 100%;
 }
 
-.navBarLeft{
-    border-color: rgb(17, 90, 158);
-    border: solid;
-    border-width: 0px 1px 0px 0px;
-    background-color: rgb(236, 238, 240);
-    height: 100%; /* 100% Full-height */
-    /*position: fixed; /* Stay in place */
-    float: left;
-   }   
+  
 
 a{
     color:rgb(5, 53, 97);
     text-decoration: none;
-    font-size: 20px;
+    font-size: 24px;
     transition: 0.4s;
+    padding:6px;
 }
 
 .homelink{
@@ -50,9 +87,10 @@ a{
     color: rgb(236, 238, 240) !important;
 }
 
+/*
 .homelink:hover{
     font-size:48px;
-}
+}*/
 
 a:hover{
     color:rgb(29, 129, 223);

@@ -4,7 +4,10 @@
   </head>
   <body>
     <div th:fragment="mitarbeiterAnzeigen">
-      Mitarbeiter anzeigen
+      <label>KIM</label>
+      <input type="text" id="kim_input">
+      <button onclick="ReplaceElementById('MaDetails','Ma_Details')">Suche</button>
     </div>
+    <div id='Ma_Details'></div>
   </body>
 </html>
