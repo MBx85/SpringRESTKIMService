@@ -6,6 +6,11 @@ div{
     padding:8px;
 }
 
+div .noSidePad{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
 .mainContent{
     float:left;
 }

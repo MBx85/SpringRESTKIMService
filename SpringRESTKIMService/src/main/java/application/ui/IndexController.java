@@ -3,6 +3,10 @@ package application.ui;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
+import application.kim.KIM;
+import csvStuff.KIMDataFileReader;
 
 @Controller
 public class IndexController {
@@ -34,9 +38,11 @@ public class IndexController {
 		return "kimAktualisieren";
 	}
 
-	@GetMapping("/MaDetails")
-	public String MaDetails() {
+	@GetMapping("/MaDetails/{kim}")
+	public String MaDetails(Model model, @PathVariable("kim") String kim) {
+		KIM kimObj = KIMDataFileReader.GetKimFromFile(kim);
+		model.addAttribute("nachname", kimObj.getNachname());
+		model.addAttribute("vorname", kimObj.getVorname());
 		return "MaDetails";
 	}
-
 }

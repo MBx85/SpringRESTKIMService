@@ -9,3 +9,12 @@ function ReplaceElementById(theUrl,elementID) {
     xmlHttp.open("GET", theUrl, true); // true for asynchronous 
     xmlHttp.send(null);
 }
+
+function ReplaceElementByIdDynamicUrl(baseUrl,additionalPath,elementID){
+    ReplaceElementById(baseUrl+additionalPath,elementID);
+}
+
+function ReplaceElementByIdDynamicUrlByInfo(baseUrl,elementID,input){
+    var additionalPath = document.getElementById(input).value;
+    ReplaceElementByIdDynamicUrl(baseUrl,additionalPath,elementID);
+}
