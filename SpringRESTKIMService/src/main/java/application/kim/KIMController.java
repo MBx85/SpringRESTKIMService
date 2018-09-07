@@ -1,12 +1,12 @@
 package application.kim;
 
 import java.util.logging.Logger;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import csvStuff.KIMDataFileReader;
 
 @RestController
 public class KIMController {
@@ -17,7 +17,7 @@ public class KIMController {
 	@RequestMapping(value = "/KIM/{kim}", method = RequestMethod.GET)
 	public KIM kim(@PathVariable("kim") String kim) {
 		log.info("KIM " + kim + " requested");
-		return new KIM(kim);
+		return KIMDataFileReader.GetKimFromFile(kim);
 	}
 	
 	

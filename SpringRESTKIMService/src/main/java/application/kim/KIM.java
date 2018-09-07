@@ -1,11 +1,7 @@
 package application.kim;
 
 import java.util.Date;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-import csvStuff.KIMDataFileReader;
-
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class KIM {
@@ -14,17 +10,15 @@ public class KIM {
 	private String nachname;
 	private Date geburtstag;
 	private Date saveDate; // (UpdateDateTime)
-
+	private String email;
+	private String company;
+	
+	
 	public KIM() {
 	}
 
 	public KIM(String kim) {
-		KIM TempKimObject = KIMDataFileReader.GetKimFromFile(kim);
-		this.kim = TempKimObject.getKIM();
-		if (this.kim != null) {
-			this.vorname = TempKimObject.getVorname();
-			this.nachname = TempKimObject.getNachname();
-		}
+		this.kim = kim;
 	}
 
 	public void setKim(String value) {
