@@ -11,9 +11,9 @@ public class KIM {
 	private Date geburtstag;
 	private Date saveDate; // (UpdateDateTime)
 	private String email;
+	private String userId;
 	private String company;
-	
-	
+		
 	public KIM() {
 	}
 
@@ -32,6 +32,22 @@ public class KIM {
 	public void setNachname(String value) {
 		this.nachname = value;
 	}
+	
+	public void setGeburtstag(Date value) {
+		this.geburtstag = value;
+	}
+	
+	public void setEmail(String value) {
+		this.email = value;
+	}
+	
+	public void setUserId(String value) {
+		this.userId = value;
+	}
+	
+	public void setCompany (String value) {
+		this.company = value;
+	}
 
 	public String getKIM() {
 		return this.kim;
@@ -43,5 +59,21 @@ public class KIM {
 
 	public String getVorname() {
 		return this.vorname;
+	}
+	
+	public Date getGeburtstag() {
+		return this.geburtstag;
+	}
+	
+	public String getEmail() {
+		return this.email;
+	}
+	
+	public String getUserId() {
+		return this.userId;
+	}
+	
+	public String getCompany () {
+		return this.company;
 	}
 }

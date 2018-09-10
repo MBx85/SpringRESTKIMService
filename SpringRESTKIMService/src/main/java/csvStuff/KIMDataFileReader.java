@@ -5,6 +5,8 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.Date;
+
+import application.Application;
 import application.kim.KIM;
 
 public class KIMDataFileReader extends GeneralDataFileReader {
@@ -89,12 +91,16 @@ public class KIMDataFileReader extends GeneralDataFileReader {
 		sb.append(kimObj.getVorname());
 		sb.append(csvDivider);
 		sb.append(kimObj.getNachname());
-		/*
-		 * sb.append(csvDivider);
-		 * sb.append(Application.DateOnlyFormatter.format(kimObj.getGeburtstag()));
-		 * sb.append(csvDivider); sb.append(Application.DateTimeFormatter.format(new
-		 * Date())); // saveDate
-		 */
+		sb.append(csvDivider);
+		sb.append(Application.DateOnlyFormatter.format(kimObj.getGeburtstag()));
+		sb.append(csvDivider);
+		sb.append(Application.DateTimeFormatter.format(new Date())); // saveDate
+		sb.append(csvDivider);
+		sb.append(kimObj.getEmail());
+		sb.append(csvDivider);
+		sb.append(kimObj.getUserId());
+		sb.append(csvDivider);
+		sb.append(kimObj.getCompany());
 		return sb.toString();
 	}
 }
