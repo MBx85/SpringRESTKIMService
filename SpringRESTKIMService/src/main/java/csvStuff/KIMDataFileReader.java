@@ -5,7 +5,6 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.Date;
-
 import application.Application;
 import application.kim.KIM;
 
@@ -28,6 +27,8 @@ public class KIMDataFileReader extends GeneralDataFileReader {
 						kimObject.setKim(tempKim);
 						kimObject.setVorname(values[CSVSupporter.GetAttributeCSVArrayPos("vorname")]);
 						kimObject.setNachname(values[CSVSupporter.GetAttributeCSVArrayPos("nachname")]);
+						kimObject.setEmail(values[5]);
+						kimObject.setUserId(values[6]);
 					}
 				} else
 					frs.IsHeaderLine = false; // set during first iteration
@@ -92,13 +93,13 @@ public class KIMDataFileReader extends GeneralDataFileReader {
 		sb.append(csvDivider);
 		sb.append(kimObj.getNachname());
 		sb.append(csvDivider);
-		sb.append(Application.DateOnlyFormatter.format(kimObj.getGeburtstag()));
+		//sb.append(Application.DateOnlyFormatter.format(kimObj.getGeburtstag()));
 		sb.append(csvDivider);
-		sb.append(Application.DateTimeFormatter.format(new Date())); // saveDate
+		//sb.append(Application.DateTimeFormatter.format(new Date())); // saveDate
 		sb.append(csvDivider);
-		sb.append(kimObj.getEmail());
+		sb.append(kimObj.InitEmail());
 		sb.append(csvDivider);
-		sb.append(kimObj.getUserId());
+		sb.append(kimObj.InitUserId());
 		sb.append(csvDivider);
 		sb.append(kimObj.getCompany());
 		return sb.toString();

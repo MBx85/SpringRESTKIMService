@@ -43,6 +43,8 @@ public class IndexController {
 		KIM kimObj = KIMDataFileReader.GetKimFromFile(kim);
 		model.addAttribute("nachname", kimObj.getNachname());
 		model.addAttribute("vorname", kimObj.getVorname());
+		model.addAttribute("email", kimObj.getEmail());
+		model.addAttribute("userId", kimObj.getUserId());
 		return "MaDetails";
 	}
 }

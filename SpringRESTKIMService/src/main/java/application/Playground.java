@@ -1,21 +1,18 @@
 package application;
 
-import java.text.SimpleDateFormat;
+
 import java.util.Date;
-import application.interfaces.PersonalSystemGetters;
+import application.kim.KIM;
+import csvStuff.KIMDataFileReader;
 
 public class Playground {
 
 	public static void main(String[] args) {
-		String pattern = "dd.MM.yyyy";// yyyy-MM-dd HH:mm:ss";
-		String dateString = "22.08.2018";
+		KIM kim = new KIM("111111");
+		kim.setVorname("Vor");
+		kim.setNachname("Nach");
 		Date date = new Date();
-		SimpleDateFormat sdf = new SimpleDateFormat(pattern);
-		try {
-			date = sdf.parse(dateString);
-		} catch (Exception e) {
-		}
-		PersonalSystemGetters.GetRefreshedKimsContent(date);
-
+		kim.setGeburtstag(date);
+		KIMDataFileReader.PutKimIntoFile(kim);
 	}
 }

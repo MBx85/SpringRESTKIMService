@@ -3,6 +3,7 @@ package application.department;
 public class Department {
 	private String deptid;
 	private String skz;
+	private String kurzbez;
 
 	public void setDeptID(String deptid) {
 		this.deptid = deptid;
@@ -19,4 +20,13 @@ public class Department {
 	public String getSkz() {
 		return skz;
 	}
+	
+	public void setKurzbez(String value) {
+		this.kurzbez = value;
+	}
+	
+	public String getKurzbez() {
+		return kurzbez;
+	}
+	
 }

@@ -76,4 +76,19 @@ public class KIM {
 	public String getCompany () {
 		return this.company;
 	}
+	
+	public String InitEmail() {
+		if(this.email == null || this.email.equals("")) {
+			return this.vorname + "."+ this.nachname + "@firma.com";
+		}
+		else return this.email;
+	}
+	
+	public String InitUserId() {
+		
+		if(this.userId == null || this.userId.equals("")) {
+			return this.vorname.substring(0, 3).toUpperCase() + this.nachname.substring(0, 3).toUpperCase();
+		}
+		else return this.userId;
+	}
 }

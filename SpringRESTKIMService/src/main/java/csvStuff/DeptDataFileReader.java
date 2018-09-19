@@ -31,5 +31,6 @@ public class DeptDataFileReader extends GeneralDataFileReader {
 	private static void doMappingFromArray(Department dept, String[] arr){
 		dept.setDeptID(arr[0]);
 		dept.setSkz(arr[1]);
+		dept.setKurzbez(arr[2]);
 	} 
 }
