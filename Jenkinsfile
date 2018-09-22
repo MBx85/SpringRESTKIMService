@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                sh 'cd SpringRESTKIMService && mvn -B -DskipTests clean package' 
+                sh 'cd SpringRESTKIMService && mvn -B -DskipTests clean package && cd target && ls' 
             }
         }
     }
