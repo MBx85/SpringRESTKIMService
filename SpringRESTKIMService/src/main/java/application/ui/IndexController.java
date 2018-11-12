@@ -47,4 +47,25 @@ public class IndexController {
 		model.addAttribute("userId", kimObj.getUserId());
 		return "MaDetails";
 	}
+
+	@GetMapping("/EditRest")
+	public String editRest() {
+		return "editRest";
+	}
+	
+	@GetMapping("/RestMetadata")
+	public String getRestMetadata() {
+		return "RestMetadata";
+	}
+	
+	@GetMapping("/RestScope")
+	public String getRestScope() {
+		return "RestScope";
+	}
+	
+	@GetMapping("/RestFields")
+	public String getRestFields() {
+		return "RestFields";
+	}
+	
 }
