@@ -41,6 +41,7 @@ input:focus{
 
 label{
     font-size:24px;
+    font-weight: normal;
     padding: 4px;
 }
 
@@ -105,5 +106,25 @@ a:hover{
     padding: 8px 8px 8px 12px;
     text-decoration: none;
     display: block;
+}
+
+th{
+    text-align: left;
+}
+
+select
+{
+    padding:4px;
+    border-radius: 4px;
+    background: rgb(236, 238, 240);
+   /* padding: 6px 10px 6px 10px;
+    width: 300px;
+    height: 20px; */
+    border-width: 1px;
+    border-color:  rgb(5,53,97);
+    font-size: 24px;
+    color:rgb(5,53,97);
+    margin-left: 2px;
+    margin-right:2px;
     
 }
