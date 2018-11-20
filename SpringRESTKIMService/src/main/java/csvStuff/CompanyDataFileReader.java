@@ -1,6 +1,11 @@
 package csvStuff;
 
 import application.company.Company;
+/** reads company from file
+ * 
+ * @author Markus
+ *
+ */
 
 public class CompanyDataFileReader extends GeneralDataFileReader {
 	private static final String FilePathProperty = "company.datasource";

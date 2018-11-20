@@ -4,9 +4,13 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
-import java.util.Date;
-import application.Application;
 import application.kim.KIM;
+
+/** reads KIM Objects from and writes them into files
+ * 
+ * @author Markus
+ *
+ */
 
 public class KIMDataFileReader extends GeneralDataFileReader {
 	private static final String FilePathProperty = "kim.datasource";
@@ -22,13 +26,9 @@ public class KIMDataFileReader extends GeneralDataFileReader {
 				if (!frs.IsHeaderLine) // because header line should not be read
 				{
 					String[] values = frs.line.split(csvDivider);
-					String tempKim = values[CSVSupporter.GetAttributeCSVArrayPos("kim")];
-					if (tempKim.equals(kim)) {
-						kimObject.setKim(tempKim);
-						kimObject.setVorname(values[CSVSupporter.GetAttributeCSVArrayPos("vorname")]);
-						kimObject.setNachname(values[CSVSupporter.GetAttributeCSVArrayPos("nachname")]);
-						kimObject.setEmail(values[5]);
-						kimObject.setUserId(values[6]);
+					
+					if (values[0].equals(kim)) {
+						doMappingFromArray(kimObject, values);
 					}
 				} else
 					frs.IsHeaderLine = false; // set during first iteration
@@ -103,5 +103,13 @@ public class KIMDataFileReader extends GeneralDataFileReader {
 		sb.append(csvDivider);
 		sb.append(kimObj.getCompany());
 		return sb.toString();
+	}
+	
+	private static void doMappingFromArray(KIM k, String[] arr) {
+		k.setKim(arr[0]);
+		k.setVorname(arr[1]);
+		k.setNachname(arr[2]);
+		k.setEmail(arr[5]);
+		k.setUserId(arr[6]);
 	}
 }
