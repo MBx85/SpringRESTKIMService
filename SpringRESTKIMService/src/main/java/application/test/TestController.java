@@ -12,4 +12,9 @@ public class TestController {
 	public String getTestMessage() {
 		return testString;
 	}
+	
+	@RequestMapping("/big")
+	public String ReturnBigString() {
+		return Test.GetBigString();
+	}
 }
