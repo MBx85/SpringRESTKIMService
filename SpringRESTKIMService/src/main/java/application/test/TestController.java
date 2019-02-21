@@ -1,4 +1,4 @@
-package application;
+package application.test;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,5 +11,10 @@ public class TestController {
 	@RequestMapping("/test")
 	public String getTestMessage() {
 		return testString;
+	}
+	
+	@RequestMapping("/big")
+	public String ReturnBigString() {
+		return Test.GetBigString();
 	}
 }
