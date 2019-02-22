@@ -1,12 +1,16 @@
 package application.service;
 
 public class Service {
+	/** Includes all necessary metadata for a REST Service.
+	*/
 	private String id;
 	private String name;
 	private String version;
 	private String endpoint;
 	private Scope[] scopes;
 	private Fields[] fields;
+	private Fields[] queryParameters;
+	private User[] users;
 
 	public void setId(String id) {
 		this.id = id;

@@ -68,4 +68,9 @@ public class IndexController {
 		return "RestFields";
 	}
 	
+	@GetMapping("/REST/QueryParameters")
+	public String getQueryParams() {
+		return  "rest/QueryParameters";
+	}
+	
 }

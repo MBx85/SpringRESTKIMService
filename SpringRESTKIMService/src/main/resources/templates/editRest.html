@@ -5,9 +5,10 @@
   <body>
     <div class="tab">
         <button class="tablinks" onclick="ReplaceElementById('RestMetadata','RestContent')">Metadaten</button>
-        <button class="tablinks"onclick="ReplaceElementById('RestScope','RestContent')">Scope</button>
-        <button class="tablinks"onclick="ReplaceElementById('RestFields','RestContent')">Felder</button>
-      </div>
+        <button class="tablinks"onclick="ReplaceElementById('RestFields','RestContent')">Felder Superset</button>
+        <button class="tablinks"onclick="ReplaceElementById('/REST/QueryParameters','RestContent')">Query Parameter</button>
+        <button class="tablinks"onclick="ReplaceElementById('RestScope','RestContent')">Scope/Felder</button>
+    </div>
       <div id="RestContent"></div>
   </body>
 </html>

@@ -15,7 +15,7 @@ div .noSidePad{
     float:left;
 }
 
-input, button {
+input, button, textarea {
     border-radius: 4px;
     background: rgb(236, 238, 240);
     padding: 6px 10px 6px 10px;
@@ -29,6 +29,13 @@ input, button {
     margin-right:2px;
 }
 
+textarea{
+    width: 100%;
+    width: -moz-available;          /* WebKit-based browsers will ignore this. */
+    width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+    width: fill-available;
+}
+
 button {
     background-color: rgb(5,53,97);
     color: rgb(236, 238, 240);
@@ -39,10 +46,19 @@ input:focus{
     outline: 0px;
 }
 
-label{
+label, h2{
     font-size:24px;
     font-weight: normal;
     padding: 4px;
+    margin: 0px;
+}
+
+h2{
+    margin-top: 8px;
+}
+
+td{
+    padding:0px;
 }
 
 .navBarLeft{
@@ -76,8 +92,6 @@ body{
     margin: 0px;
     height: 100%;
 }
-
-  
 
 a{
     color:rgb(5, 53, 97);
