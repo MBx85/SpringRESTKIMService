@@ -7,10 +7,10 @@ public class Service {
 	private String name;
 	private String version;
 	private String endpoint;
-	private Scope[] scopes;
+	/*private Scope[] scopes;
 	private Fields[] fields;
 	private Fields[] queryParameters;
-	private User[] users;
+	private User[] users;*/
 
 	public void setId(String id) {
 		this.id = id;
