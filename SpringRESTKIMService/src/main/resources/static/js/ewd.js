@@ -3,11 +3,21 @@ function ReplaceElementById(theUrl, elementID) {
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.onreadystatechange = function () {
         if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
-            //callback();
             main.innerHTML = xmlHttp.responseText;
     }
     xmlHttp.open("GET", theUrl, true); // true for asynchronous 
     xmlHttp.send(null);
+}
+
+function MakeChildrenInvisibleExceptForOne(ParentDivId, VisibleExceptionId) {
+    var selector = "#" + ParentDivId;
+    var selectorExceptionId = "#" + VisibleExceptionId;
+    $(selector).children('div').css('display', 'none');
+    $(selector).children(selectorExceptionId).removeAttr('style');
+}
+
+function chk() {
+    $("#ServiceVersion").val("LLL");
 }
 
 function ReplaceElementByIdDynamicUrl(baseUrl, additionalPath, elementID) {
@@ -51,7 +61,7 @@ function GetAllRestServices(callback) {
     xmlHttp.send(null);
 }
 
-function PopulateServicesDropdown(){
+function PopulateServicesDropdown() {
     GetAllRestServices(WriteServiceIDsToDropdown);
 }
 
@@ -59,30 +69,18 @@ function WriteServiceIDsToDropdown(response) {
     var dropdown = document.getElementById("ServiceIdSelect");
     while (dropdown.firstChild) {
         dropdown.removeChild(dropdown.firstChild);
-      }
-      //document.getElementById("RestSource").value = response;
-      var arr = new Array(response);
-      alert(arr.length);
-    /*for (i = 1; i <= 2; i++) {
+    }
+    var arr = JSON.parse(response);
+
+    dropdown.appendChild(document.createElement("option"));
+    for (i = 0; i < arr.length; i++) {
         var opt = document.createElement("option");
-        opt.value = i;
-        opt.innerHTML=i;
+        var ServiceId = arr[i].id;
+        opt.value = ServiceId;
+        opt.innerHTML = ServiceId;
         dropdown.appendChild(opt);
-    }*/
-
-
+    }
 }
-
-/*
-
-function WriteResSource(){
-    GetAllRestServices(WriteResponseToSourceField);
-}
-
-function WriteResponseToSourceField(response){
-    document.getElementById("RestSource").value = response;
-}
-*/
 
 function alertDate() {
     alert(a);

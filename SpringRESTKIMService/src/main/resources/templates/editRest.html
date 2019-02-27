@@ -1,16 +1,114 @@
 <!DOCTYPE html>
 <html>
-  <head>
-  </head>
-  <body>
-    <div class="tab">
-        <button class="tablinks" onclick="ReplaceElementById('RestMetadata','RestContent')">Metadaten</button>
-        <button class="tablinks" onclick="ReplaceElementById('RestFields','RestContent')">Felder Superset</button>
-        <button class="tablinks" onclick="ReplaceElementById('/REST/QueryParameters','RestContent')">Query Parameter</button>
-        <button class="tablinks" onclick="ReplaceElementById('RestScope','RestContent')">Scope/Felder</button>
+
+<head>
+</head>
+
+<body>
+  <div id="RestTabLinks" class="tab">
+    <button class="tablinks"
+      onclick="MakeChildrenInvisibleExceptForOne('RestContent', 'RestMetadata')">Metadaten</button>
+    <button class="tablinks" onclick="MakeChildrenInvisibleExceptForOne('RestContent', 'RestFields')">Felder
+      Superset</button>
+    <button class="tablinks" onclick="MakeChildrenInvisibleExceptForOne('RestContent', 'QueryParameters')">Query
+      Parameter</button>
+    <button class="tablinks"
+      onclick="MakeChildrenInvisibleExceptForOne('RestContent', 'RestScope')">Scope/Felder</button>
+  </div>
+  <div id="RestContent">
+    <div id="RestMetadata">
+      <table>
+        <tr>
+          <td><label>ID</label></td>
+          <!--<td><input id="ServiceID" type="text"></td>-->
+          <td><select id="ServiceIdSelect"></select></td>
+          <td><label>Name</label></td>
+          <td><input type="text"></td>
+        </tr>
+        <tr>
+          <td><label>Version</label></td>
+          <td><input id="ServiceVersion" type="text"></td>
+          <td><label>Endpoint</label></td>
+          <td><input id="ServiceEndpoint" type="text"></td>
+          </td>
+        </tr>
+      </table>
+      <h2>Quelle</h2>
+      <textarea id="RestSource" value="" rows="4"></textarea>
     </div>
-      <div id="RestContent"></div>
-      <div><button onclick="SaveRestService()">Speichern</button></div>
-      <div><button onclick="PopulateServicesDropdown()">Services</button></div>
-  </body>
+    <div id="RestFields" style="display:none">
+      <table>
+        <tr>
+          <th><label>JSON/XML Element</label></th>
+          <th><label>Wert</label></th>
+        </tr>
+        <tr>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+        </tr>
+        <tr>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+        </tr>
+        <tr>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+        </tr>
+      </table>
+    </div>
+    <div id="QueryParameters" style="display:none">
+      <table>
+        <tr>
+          <th><label>Parameter</label></th>
+          <th><label>Wert</label></th>
+        </tr>
+        <tr>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+        </tr>
+        <tr>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+        </tr>
+        <tr>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+        </tr>
+      </table>
+    </div>
+    <div id="RestScope" style="display:none"> <label>User</label>
+      <select>
+        <option>a</option>
+        <option value="b">b</option>
+        <option value="c">c</option>
+        <option value="d">d</option>
+      </select>
+      <h2>Scope</h2>
+      <textarea rows="4"></textarea>
+      <table>
+        <tr>
+          <th><label>Feld</label></th>
+          <th><label>Wert</label></th>
+        </tr>
+        <tr>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+        </tr>
+        <tr>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+        </tr>
+        <tr>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div><button onclick="SaveRestService()">Speichern</button></div>
+  <div><button id="SvcBtn" onclick="PopulateServicesDropdown()">Services</button></div>
+
+</body>
+
+
 </html>

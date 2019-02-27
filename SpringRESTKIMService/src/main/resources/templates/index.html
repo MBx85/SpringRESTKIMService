@@ -5,6 +5,7 @@
 	<title>EWD</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css" href="css/ewd.css">
+	<script src="js/jquery-3.3.1.min.js"></script>
 	<script src="js/ewd.js"></script>
 </head>
 
@@ -15,13 +16,14 @@
 		<a href="#" onclick="ReplaceElementById('mitarbeiter','mainContent')">Mitarbeiter anzeigen</a>
 		<a href="#" onclick="ReplaceElementById('RefreshKIMs','mainContent')">KIMs aktualisieren</a>
 		<a href="#" onclick="ReplaceElementById('EditRest','mainContent')">REST Service konfigurieren</a>
+		<a href="#" onclick="chk()">test</a>
 	</div>
 	<div id="mainContent" class="mainContent">
+		<input id="chk" type="text">
 		<!--<div th:replace="${fragment} :: ${fragmentElement}"></div>
 					<div th:replace="/fragments/testfragment :: testfragment">2016 The Static Templates</div>
 			<div th:replace="/fragments/testfragment :: testfragment">2016 The Static Templates</div>-->
 	</div>
-
 </body>
 
 </html>
