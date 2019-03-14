@@ -20,10 +20,9 @@
       <table>
         <tr>
           <td><label>ID</label></td>
-          <!--<td><input id="ServiceID" type="text"></td>-->
-          <td><select id="ServiceIdSelect" onchange="alert('a')"></select></td>
+          <td><select id="ServiceIdSelect" onchange="PopulateServiceDetails()"></select></td>
           <td><label>Name</label></td>
-          <td><input type="text"></td>
+          <td><input id="ServiceName" type="text"></td>
         </tr>
         <tr>
           <td><label>Version</label></td>
@@ -105,7 +104,7 @@
       </table>
     </div>
   </div>
-  <div><button onclick="SaveRestService()">Speichern</button></div>
+  <div><button id="SaveSvcBtn" onclick="SaveRestService()">Speichern</button></div>
   <div><button id="SvcBtn" onclick="PopulateServicesDropdown()">Services</button></div>
-</body>
+  </body>
 </html>
