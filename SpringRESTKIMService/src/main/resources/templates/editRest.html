@@ -21,7 +21,7 @@
         <tr>
           <td><label>ID</label></td>
           <!--<td><input id="ServiceID" type="text"></td>-->
-          <td><select id="ServiceIdSelect"></select></td>
+          <td><select id="ServiceIdSelect" onchange="alert('a')"></select></td>
           <td><label>Name</label></td>
           <td><input type="text"></td>
         </tr>
@@ -107,8 +107,5 @@
   </div>
   <div><button onclick="SaveRestService()">Speichern</button></div>
   <div><button id="SvcBtn" onclick="PopulateServicesDropdown()">Services</button></div>
-
 </body>
-
-
 </html>
