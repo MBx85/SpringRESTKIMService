@@ -1,5 +1,6 @@
 package application.service;
 
-public class User {
+public class QueryParam {
 	private String name;
+	private String filter;
 }

@@ -43,26 +43,21 @@ function RefreshKims() {
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.onreadystatechange = function () {
         if (xmlHttp.readyState == 4 && xmlHttp.status == 200) { }
-        //main.innerHTML = xmlHttp.responseText;
     }
-    xmlHttp.open("GET", "/RefreshFromPS?date=" + date, true); // true for asynchronous 
+    xmlHttp.open("GET", "/RefreshFromPS?date=" + date, true);
     xmlHttp.send(null);
 }
 
 function SaveRestService() {
-    // var service = new Object();
-    //var select = document.getElementById("ServiceIdSelect"); // $("ServiceIdSelect");
-    alert(//service.id = 
-        $("#ServiceIdSelect option:selected").val());
-
-    // select.options[select.selectedIndex].value);
-    //alert(service.id);
-    /*service.endpoint = document.getElementById("ServiceEndpoint").value;
-    service.version = document.getElementById("ServiceVersion").value;
+    var service = new Object();
+    service.id = $("#ServiceIdSelect option:selected").val();
+    service.name = $("#ServiceName").val();
+    service.endpoint = $("#ServiceEndpoint").val();
+    service.version = $("#ServiceVersion").val();
     var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open("PUT", "/REST/Services/" + service.id, true); // true for asynchronous 
+    xmlHttp.open("PUT", "/REST/Services/" + service.id, true);
     xmlHttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-    xmlHttp.send(JSON.stringify(service));*/
+    xmlHttp.send(JSON.stringify(service));
 }
 
 function GetAllRestServices(callback) {
@@ -103,7 +98,7 @@ function PopulateServicesDropdown() {
 }
 
 function WriteServiceIDsToDropdown(response) {
-    var dropdown = document.getElementById("ServiceIdSelect");
+    var dropdown = document.getElementById("ServiceIdSelect")
     while (dropdown.firstChild) {
         dropdown.removeChild(dropdown.firstChild);
     }
@@ -117,4 +112,12 @@ function WriteServiceIDsToDropdown(response) {
         opt.innerHTML = ServiceId;
         dropdown.appendChild(opt);
     }
+}
+
+function AddRestField() {
+    //$("#RestFieldTableBody").children().css("color", "red");
+    //$("#RestFieldTableBody").children().children(".uab").css("background-color", "red");
+    $(".AddFieldBtnRow").remove();
+    $("#RestFieldTableBody").append("<tr><td><input type='text'></td><td><input type='text'></td></tr>");
+    $("#RestFieldTableBody").append("<tr class='AddFieldBtnRow'><td> <button id='AddFieldBtn' onclick='AddRestField()'>+</button></td ></tr>");
 }

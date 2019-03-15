@@ -36,23 +36,20 @@
       <textarea id="RestSource" value="" rows="4"></textarea>
     </div>
     <div id="RestFields" style="display:none">
-      <table>
-        <tr>
-          <th><label>JSON/XML Element</label></th>
-          <th><label>Wert</label></th>
-        </tr>
-        <tr>
-          <td><input type="text"></td>
-          <td><input type="text"></td>
-        </tr>
-        <tr>
-          <td><input type="text"></td>
-          <td><input type="text"></td>
-        </tr>
-        <tr>
-          <td><input type="text"></td>
-          <td><input type="text"></td>
-        </tr>
+      <table id="RestFieldTable">
+        <tbody id="RestFieldTableBody">
+          <tr>
+            <th><label>JSON/XML Element</label></th>
+            <th><label>Quelle</label></th>
+          </tr>
+          <tr class="RestFieldInput">
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+          </tr>
+          <tr class="AddFieldBtnRow">
+            <td><button id="AddFieldBtn" onclick="AddRestField()">+</button></td>
+          </tr>
+        </tbody>
       </table>
     </div>
     <div id="QueryParameters" style="display:none">
@@ -105,6 +102,7 @@
     </div>
   </div>
   <div><button id="SaveSvcBtn" onclick="SaveRestService()">Speichern</button></div>
-  <div><button id="SvcBtn" onclick="PopulateServicesDropdown()">Services</button></div>
-  </body>
+  <div style="display:none"><button id="SvcBtn" onclick="PopulateServicesDropdown()">Services</button></div>
+</body>
+
 </html>

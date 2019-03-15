@@ -7,10 +7,10 @@ public class Service {
 	private String name;
 	private String version;
 	private String endpoint;
-	/*private Scope[] scopes;
+	private String source;
 	private Fields[] fields;
-	private Fields[] queryParameters;
-	private User[] users;*/
+	private QueryParam[] queryParameters;
+	private UserDetails[] userDetails;
 
 	public void setId(String id) {
 		this.id = id;
@@ -43,8 +43,20 @@ public class Service {
 	public String getEndpoint() {
 		return this.endpoint;
 	}
-/*	
-	public void setScope(Scope scope) {
-		this.scope=scope;
-	}*/
+	
+	public void setSource(String source) {
+		this.source=source;
+	}
+
+	public String getSource(){
+		return this.source;
+	}
+
+	public void setFields(Fields[] fields){
+		this.fields = fields;
+	}
+
+	public Fields[] getFields(){
+		return this.fields;
+	}
 }
