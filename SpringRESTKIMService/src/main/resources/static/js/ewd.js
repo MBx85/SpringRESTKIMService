@@ -118,6 +118,12 @@ function AddRestField() {
     //$("#RestFieldTableBody").children().css("color", "red");
     //$("#RestFieldTableBody").children().children(".uab").css("background-color", "red");
     $(".AddFieldBtnRow").remove();
-    $("#RestFieldTableBody").append("<tr><td><input type='text'></td><td><input type='text'></td></tr>");
+    $("#RestFieldTableBody").append("<tr class='RestFieldInput'><td><input type='text'></td><td><input type='text'></td><td><button id='RemFieldBtn' onclick='RemoveRestField()'>-</button></td></tr>");
     $("#RestFieldTableBody").append("<tr class='AddFieldBtnRow'><td> <button id='AddFieldBtn' onclick='AddRestField()'>+</button></td ></tr>");
+}
+
+function RemoveRestField(e){
+   console.log("AAA");
+   e.parent().parent("tr").get().remove();
+   ;
 }
