@@ -54,6 +54,15 @@ function SaveRestService() {
     service.name = $("#ServiceName").val();
     service.endpoint = $("#ServiceEndpoint").val();
     service.version = $("#ServiceVersion").val();
+    /**
+     * for every $(".RestFieldInput")
+     */
+    var RestFields = $(".RestFieldInput").get();
+    console.log(RestFields.length);
+    for(var i=0;i<RestFields.length;i++){
+        console.log(RestFields[i].children()/*.$("#RestFieldValue")*/);
+    }
+
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open("PUT", "/REST/Services/" + service.id, true);
     xmlHttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
@@ -115,15 +124,11 @@ function WriteServiceIDsToDropdown(response) {
 }
 
 function AddRestField() {
-    //$("#RestFieldTableBody").children().css("color", "red");
-    //$("#RestFieldTableBody").children().children(".uab").css("background-color", "red");
     $(".AddFieldBtnRow").remove();
-    $("#RestFieldTableBody").append("<tr class='RestFieldInput'><td><input type='text'></td><td><input type='text'></td><td><button id='RemFieldBtn' onclick='RemoveRestField()'>-</button></td></tr>");
+    $("#RestFieldTableBody").append("<tr class='RestFieldInput'>  <td><input type='text' id='RestFieldValue'></td>  <td><input type='text' id='RestFieldSource'></td>  <td><button id='RemFieldBtn' onclick='RemoveRestField($(this))'>-</button></td></tr>");
     $("#RestFieldTableBody").append("<tr class='AddFieldBtnRow'><td> <button id='AddFieldBtn' onclick='AddRestField()'>+</button></td ></tr>");
 }
 
-function RemoveRestField(e){
-   console.log("AAA");
-   e.parent().parent("tr").get().remove();
-   ;
+function RemoveRestField(e) {
+    e.parent().parent().remove();
 }
