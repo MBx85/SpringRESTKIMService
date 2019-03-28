@@ -6,8 +6,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class ServiceFileOperator {
 
-	private static String ServicesLocation = "datasource/Services/";
-	private static String FileEnding = ".json";
+	private static final String ServicesLocation = "datasource/Services/";
+	private static final String FileEnding = ".json";
 
 	static ArrayList<Service> GetAllServices() {
 		File folder = new File(ServicesLocation);

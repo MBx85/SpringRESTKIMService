@@ -1,23 +1,14 @@
 package application;
 
-import java.io.File;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-import application.service.Service;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class Playground2 {
 
 	public static void main(String[] args) {
-		String id = "RestS1";
-		Service s = new Service();
-		s.setId(id);
-
-		ObjectMapper om = new ObjectMapper();
-		try {
-			om.writeValue(new File("datasource/Services/"+id+".json"), s);
-		} catch (Exception e) {
-		}
+		for (int i=1;i<=40;i++) {
+			int randomNum = ThreadLocalRandom.current().nextInt(1,5);
+				System.out.println( randomNum);
+		}}
 	}
 
-}
+
