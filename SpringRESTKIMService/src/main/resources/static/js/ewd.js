@@ -54,13 +54,15 @@ function SaveRestService() {
     service.name = $("#ServiceName").val();
     service.endpoint = $("#ServiceEndpoint").val();
     service.version = $("#ServiceVersion").val();
+    service.source = $("#RestSource").val();
     /**
      * for every $(".RestFieldInput")
      */
     var RestFields = $(".RestFieldInput").get();
+    console.log ( $(".RestFieldInput").get());
     console.log(RestFields.length);
     for(var i=0;i<RestFields.length;i++){
-        console.log(RestFields[i].children()/*.$("#RestFieldValue")*/);
+        console.log($(".RestFieldInput").get(i));//.children(".RestFieldSource").val());
     }
 
     var xmlHttp = new XMLHttpRequest();
@@ -84,6 +86,7 @@ function WriteServiceDetailsToUI(response) {
     $("#ServiceVersion").val(service.version);
     $("#ServiceName").val(service.name);
     $("#ServiceEndpoint").val(service.endpoint);
+    $("#RestSource").val(service.source);
 }
 
 function PopulateServiceDetails() {

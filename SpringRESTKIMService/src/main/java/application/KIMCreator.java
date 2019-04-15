@@ -7,7 +7,7 @@ import application.kim.KIM;
 
 public class KIMCreator {
 
-	private static final int KIMCount = 100000;
+	private static final int KIMCount = 1000;
 	private static final String KimsLocation = "datasource/KIMs/";
 	private static final String FileEnding = ".json";
 
