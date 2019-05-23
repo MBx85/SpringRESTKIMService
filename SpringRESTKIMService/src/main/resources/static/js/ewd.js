@@ -55,15 +55,18 @@ function SaveRestService() {
     service.endpoint = $("#ServiceEndpoint").val();
     service.version = $("#ServiceVersion").val();
     service.source = $("#RestSource").val();
-    /**
-     * for every $(".RestFieldInput")
-     */
+    service.fields = new Array();
     var RestFields = $(".RestFieldInput").get();
-    console.log ( $(".RestFieldInput").get());
-    console.log(RestFields.length);
     for(var i=0;i<RestFields.length;i++){
-        console.log($(".RestFieldInput").get(i));//.children(".RestFieldSource").val());
+        var field = new Object();
+        field.name =  ($(".RestFieldInput").eq(i).children("td").children("#RestFieldValue").val());
+        field.source = ($(".RestFieldInput").eq(i).children("td").children("#RestFieldSource").val());
+        service.fields.push(field);
+        /*console.log($(".RestFieldInput").eq(i).children("td").children("#RestFieldValue").val());
+        console.log($(".RestFieldInput").eq(i).children("td").children("#RestFieldSource").val());*/
     }
+
+    //$("#ttt").val(JSON.stringify(service)); 
 
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open("PUT", "/REST/Services/" + service.id, true);
@@ -87,6 +90,12 @@ function WriteServiceDetailsToUI(response) {
     $("#ServiceName").val(service.name);
     $("#ServiceEndpoint").val(service.endpoint);
     $("#RestSource").val(service.source);
+    $(".RestFieldInput").remove();
+    for(var i=0;i<service.fields.length;i++){
+        AddRestField();
+        ($(".RestFieldInput").eq(i).children("td").children("#RestFieldValue").val(service.fields[i].name));
+        ($(".RestFieldInput").eq(i).children("td").children("#RestFieldSource").val(service.fields[i].source));
+    }
 }
 
 function PopulateServiceDetails() {
@@ -134,4 +143,8 @@ function AddRestField() {
 
 function RemoveRestField(e) {
     e.parent().parent().remove();
+}
+
+function RemoveEmptyRestInputFields(){
+    $(".RestFieldInput").remove();
 }

@@ -13,7 +13,7 @@
     <button class="tablinks" onclick="MakeChildrenInvisibleExceptForOne('RestContent', 'QueryParameters')">Query
       Parameter</button>
     <button class="tablinks"
-      onclick="MakeChildrenInvisibleExceptForOne('RestContent', 'RestScope')">Scope/Felder</button>
+      onclick="MakeChildrenInvisibleExceptForOne('RestContent', 'RestScope')">Scope</button>
   </div>
   <div id="RestContent">
     <div id="RestMetadata">
@@ -52,6 +52,7 @@
           </tr>
         </tbody>
       </table>
+      <!--<textarea id="ttt" value="" rows="4"></textarea>-->
     </div>
     <div id="QueryParameters" style="display:none">
       <table>
@@ -60,29 +61,29 @@
           <th><label>Wert</label></th>
         </tr>
         <tr>
+          <td><input type="text" value="company"></td>
+          <td><input type="text" value ="M.MITA_GESE"></td>
+          <td><button id="RemQParamBtn" onclick="RemoveRestField($(this))">-</button></td>
+        </tr>
+        <!--<tr>
           <td><input type="text"></td>
           <td><input type="text"></td>
         </tr>
         <tr>
           <td><input type="text"></td>
           <td><input type="text"></td>
-        </tr>
-        <tr>
-          <td><input type="text"></td>
-          <td><input type="text"></td>
-        </tr>
+        </tr>-->
       </table>
     </div>
     <div id="RestScope" style="display:none"> <label>User</label>
       <select>
-        <option>a</option>
-        <option value="b">b</option>
-        <option value="c">c</option>
-        <option value="d">d</option>
+        <option value="EWD_CAREER">EWD_CAREER</option>
+        <option value="EWD_TALEO">EWD_TALEO</option>
+        <option value="EWD_TRAVEL">EWD_TRAVEL</option>
       </select>
       <h2>Scope</h2>
-      <textarea rows="4"></textarea>
-      <table>
+      <textarea id="TechUserScope" rows="4" >M.MITA_GESE='0400'</textarea>
+      <!--<table>
         <tr>
           <th><label>Feld</label></th>
           <th><label>Wert</label></th>
@@ -99,7 +100,7 @@
           <td><input type="text"></td>
           <td><input type="text"></td>
         </tr>
-      </table>
+      </table>-->
     </div>
   </div>
   <div><button id="SaveSvcBtn" onclick="SaveRestService()">Speichern</button></div>

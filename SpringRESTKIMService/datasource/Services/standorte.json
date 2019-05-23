@@ -1,0 +1,1 @@
+{"id":"standorte","name":"Standorte","version":"1.1","endpoint":"/SORT/{standortid}","source":"SORT WHERE SORT_SCHL = {standortid}","fields":[{"name":"id","source":"sort_schl"},{"name":"city","source":"sort_stadt"},{"name":"postalcode","source":"sort_plz"},{"name":"street","source":"sort_strasse"}]}
